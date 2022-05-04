@@ -1,0 +1,22 @@
+import 'package:fl_components/router/app_routes.dart';
+import 'package:fl_components/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    print(AppRoutes.getAppRoute());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Material App',
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoute(),
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      theme: AppTheme.lightTheme,
+    );
+  }
+}
